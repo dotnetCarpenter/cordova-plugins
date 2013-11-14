@@ -25,6 +25,8 @@ public class Calendar extends CordovaPlugin {
           .putExtra("eventLocation", arg_object.getString("eventLocation"));
 
         this.cordova.getActivity().startActivity(calIntent);
+        // http://www.infil00p.org/advanced-tutorial-using-cordovawebview-on-android/
+        //this.cordova.getThreadPool()
         callbackContext.success();
         return true;
       }
