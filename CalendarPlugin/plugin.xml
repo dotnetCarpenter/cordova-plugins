@@ -21,7 +21,7 @@
             </feature>
         </config-file>
  
-        <source-file src="src/android/Calendar.java" target-dir="src/dk/ticonf/calendar" />     
+        <source-file src="src/android/Calendar.java" target-dir="src/dk/ticonf/calendar" />
      </platform>
      <engines>
         <engine name="cordova" version=">=3.1.0" />
