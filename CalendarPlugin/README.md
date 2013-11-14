@@ -1,5 +1,7 @@
-#CalendarPlugin for Cordova 3
-This is test plugin project based on http://devgirl.org/2013/09/17/how-to-write-a-phonegap-3-0-plugin-for-android/
+CalendarPlugin for Cordova 3
+============================
+
+This is test plugin project based on <http://devgirl.org/2013/09/17/how-to-write-a-phonegap-3-0-plugin-for-android/>
 
 ##notes
 
@@ -29,6 +31,6 @@ Remember to check that the location for the `.java` file is where you define it
 Remember to name the package according to the **plugin.xml**
 
 ```java
-package dk.ticonf.calendar; // this should correspond to the plugin id
+package dk.ticonf.calendar; // this must correspond to the plugin id
 ```
 
