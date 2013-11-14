@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ 
+<plugin  xmlns="http://apache.org/cordova/ns/plugins/1.0" 
+ xmlns:android="http://schemas.android.com/apk/res/android"
+            id="dk.ticonf.fullscreen"
+       version="0.1.0">
+    <name>Fullscreen</name>
+    <description>Sample PhoneGap Fullscreen Plugin</description>
+    <license>MIT</license>
+    <keywords>phonegap,fullscreen</keywords>
+
+    <js-module src="www/fullscreen.js" name="Fullscreen">
+        <clobbers target="window.fullscreen" />
+    </js-module>
+ 
+    <!-- android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="Fullscreen">
+                <param name="android-package" value="dk.ticonf.fullscreen.Fullscreen"/>
+            </feature>
+        </config-file>
+ 
+        <source-file src="src/android/Fullscreen.java" target-dir="src/dk/ticonf/fullscreen" />
+     </platform>
+     <engines>
+        <engine name="cordova" version=">=3.1.0" />
+     </engines> 
+</plugin>
