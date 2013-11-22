@@ -22,8 +22,9 @@
         </config-file>
  
         <source-file src="src/android/Fullscreen.java" target-dir="src/dk/ticonf/fullscreen" />
+        <source-file src="src/android/FullscreenActivity.java" target-dir="src/dk/ticonf/fullscreen" />
      </platform>
      <engines>
         <engine name="cordova" version=">=3.1.0" />
-     </engines> 
+     </engines>
 </plugin>

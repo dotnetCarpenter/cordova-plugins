@@ -7,9 +7,12 @@ import org.json.JSONArray;
 import org.json.JSONException;
 //import android.R;
 import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
 import android.view.Window;
 import android.view.WindowManager;
 import java.lang.StringBuilder;
+
 
 public class Fullscreen extends CordovaPlugin {
   public static final String ACTION_REQUEST_FULLSCREEN = "requestFullScreen";
@@ -17,16 +20,19 @@ public class Fullscreen extends CordovaPlugin {
 
   @Override
   public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
+    //Activity activity = this.cordova.getActivity();
+    //Window window = activity.getWindow();
+    Context context = cordova.getActivity().getApplicationContext();
+    Intent intent = new Intent(context, FullscreenActivity);
+    context.startActivity(intent);
+    /*
     if (ACTION_REQUEST_FULLSCREEN.equals(action)) {
 
       try {
-        Activity activity = this.cordova.getActivity();
-        activity.requestWindowFeature(Window.FEATURE_NO_TITLE); 
-        activity.getWindow()
-          .setFlags(
-            WindowManager.LayoutParams.FLAG_FULLSCREEN,
-            WindowManager.LayoutParams.FLAG_FULLSCREEN
-          );
+        
+        activity.requestWindowFeature(Window.FEATURE_NO_TITLE);        
+        window.addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        window.clearFlags(WindowManager.LayoutParams.FLAG_FORCE_NOT_FULLSCREEN);
         //activity.setContentView(this.webView);
         //this.webView.requestLayout();
         activity.getCurrentFocus().requestLayout();
@@ -39,12 +45,9 @@ public class Fullscreen extends CordovaPlugin {
     } else if (ACTION_CANCEL_FULLSCREEN.equals(action)) {
 
       try {
-        Activity activity = this.cordova.getActivity();
-        activity.getWindow()
-          .setFlags(
-            WindowManager.LayoutParams.FLAG_FORCE_NOT_FULLSCREEN,
-            WindowManager.LayoutParams.FLAG_FORCE_NOT_FULLSCREEN
-          );
+
+        window.addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        window.clearFlags(WindowManager.LayoutParams.FLAG_FORCE_NOT_FULLSCREEN);
         //activity.setContentView(this.webView);
         //this.webView.requestLayout();
         activity.getCurrentFocus().requestLayout();
@@ -67,7 +70,7 @@ public class Fullscreen extends CordovaPlugin {
       callbackContext.error(sb.toString());
       return false;
 
-    }
+    }*/
   }
 
   private boolean catchError(Exception e, CallbackContext callbackContext) {
